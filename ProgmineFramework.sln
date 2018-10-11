@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTest Framework18", "MSTest Framework18\MSTest Framework18.csproj", "{47B37620-5AD8-4E9F-8626-57A4E4C39526}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSTestFramework18", "MSTest Framework18\MSTestFramework18.csproj", "{47B37620-5AD8-4E9F-8626-57A4E4C39526}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
