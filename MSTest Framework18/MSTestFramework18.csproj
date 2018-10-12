@@ -68,6 +68,7 @@
     <Compile Include="ComponentHelper\LinkHelper.cs" />
     <Compile Include="ComponentHelper\NavigationHelper.cs" />
     <Compile Include="ComponentHelper\PageTitleHelper.cs" />
+    <Compile Include="ComponentHelper\TextboxHelper.cs" />
     <Compile Include="Configuration\AppConfigReader.cs" />
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="CustomException\NoSuitableExceptionFound.cs" />

@@ -25,12 +25,14 @@ namespace MSTest_Framework18.SandBox.WebElements
 			try
 			{
 				ObjectRepository.Driver.FindElement(By.Id("idcta-username"));
-				ObjectRepository.Driver.FindElement(By.ClassName("id4-cta-register"));
-				ObjectRepository.Driver.FindElement(By.CssSelector("#ls-c-search__input-label"));
-				ObjectRepository.Driver.FindElement(By.TagName("li"));
+				//ObjectRepository.Driver.FindElement(By.ClassName("ls-ui-input"));
+				ObjectRepository.Driver.FindElement(By.CssSelector(""));
+				ObjectRepository.Driver.FindElement(By.TagName("input"));
 				ObjectRepository.Driver.FindElement(By.LinkText("Warnings"));
-				var goButton = ObjectRepository.Driver.FindElement(By.Id("submit"));
-				goButton.Click();
+				ObjectRepository.Driver.FindElement(By.PartialLinkText("arnings"));
+				
+				//var goButton = ObjectRepository.Driver.FindElement(By.Id("submit"));
+				//goButton.Click();
 			}
 			catch (NoSuchElementException e)
 			{
@@ -38,16 +40,20 @@ namespace MSTest_Framework18.SandBox.WebElements
 				throw;
 			}
 
-			var tagList = ObjectRepository.Driver.FindElements(By.TagName("li"));
-			foreach (var tag in tagList)
-			{
-				if (tag.GetAttribute("value").Equals("orb-nav-home"))
-				{
-					tag.Click();
-					Thread.Sleep(8000);
-					break;
-				}
-			}
+			
+			//var tagList = ObjectRepository.Driver.FindElements(By.TagName("input"));
+			//foreach (var tag in tagList)
+			//{
+			//	if (tag.GetAttribute("class").Equals("ls-ui-input")) continue;
+			//	{
+			//		tag.Click();
+			//		Thread.Sleep(8000);
+			//		break;
+			//	}
+			//}
+			LinkHelper.ClickLink(By.LinkText("Warnings"));
+			
+
 		}
 
 	}
