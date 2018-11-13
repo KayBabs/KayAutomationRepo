@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MSTest_Framework18.Configuration;
 using MSTest_Framework18.CustomException;
@@ -100,6 +101,9 @@ namespace MSTest_Framework18.Base
 				default:
 					throw new NoSuitableDriverFound("Driver not Here {0}", ObjectRepository.Config.GetBrowser());
 			}
+			// ObjectRepository.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+			ObjectRepository.Driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(15);
 		}
 		[AssemblyCleanup]
 		public static void TearDown()

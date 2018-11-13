@@ -9,6 +9,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MSTest_Framework18.ComponentHelper;
 using MSTest_Framework18.Settings;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Internal;
 
 namespace MSTest_Framework18.SandBox.WebElements
 {
@@ -20,39 +21,17 @@ namespace MSTest_Framework18.SandBox.WebElements
 		{
 			NavigationHelper.
 				NavigateToUrl(ObjectRepository.
-					Config.
-						GetWebsite());
-			try
-			{
-				ObjectRepository.Driver.FindElement(By.Id("idcta-username"));
-				//ObjectRepository.Driver.FindElement(By.ClassName("ls-ui-input"));
-				ObjectRepository.Driver.FindElement(By.CssSelector(""));
-				ObjectRepository.Driver.FindElement(By.TagName("input"));
-				ObjectRepository.Driver.FindElement(By.LinkText("Warnings"));
-				ObjectRepository.Driver.FindElement(By.PartialLinkText("arnings"));
-				
-				//var goButton = ObjectRepository.Driver.FindElement(By.Id("submit"));
-				//goButton.Click();
-			}
-			catch (NoSuchElementException e)
-			{
-				Console.WriteLine(e);
-				throw;
-			}
+					Config.GetWebsite());
+			ButtonHelper.ClickButton(By.CssSelector("#top-links > ul > li.dropdown > a > span.hidden-xs.hidden-sm.hidden-md"));
+			WaitHelper.WaitForElement(By.CssSelector("#top-links > ul > li.dropdown > a > span.hidden-xs.hidden-sm.hidden-md"));
+			ButtonHelper.ClickButton(By.LinkText("Register"));
 
-			
-			//var tagList = ObjectRepository.Driver.FindElements(By.TagName("input"));
-			//foreach (var tag in tagList)
-			//{
-			//	if (tag.GetAttribute("class").Equals("ls-ui-input")) continue;
-			//	{
-			//		tag.Click();
-			//		Thread.Sleep(8000);
-			//		break;
-			//	}
-			//}
-			LinkHelper.ClickLink(By.LinkText("Warnings"));
-			
+			Thread.Sleep(3000);
+			//ButtonHelper.IsButtonEnabled(By.LinkText(""));
+			//ButtonHelper.ClickButton(By.LinkText(""));
+
+			//CheckboxHelper.IsCheckBoxTicked(By.Name("agree"));
+			//CheckboxHelper.TickCheckbox(By.Name("agree"));
 
 		}
 
